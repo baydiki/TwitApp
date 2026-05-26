@@ -1,8 +1,16 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
+
 <h1>List Twit Page</h1>
-<ul>
-  {% for twit in twits %}
-  <li>{{ twit.nickname }}: {{ twit.content }}</li>
-  {% endfor %}
-</ul>
+<div class="container mt-5">
+  <div class="twit-grid">
+    {% for twit in twits %}
+    <div class="card glass-card" style="width: 18rem">
+      <div class="card-body">
+        <h5 class="card-title">{{ twit.nickname }}</h5>
+        <p class="card-text">{{ twit.content }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock content %}
